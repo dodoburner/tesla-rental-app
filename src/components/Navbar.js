@@ -69,7 +69,9 @@ const Navbar = () => {
               <li
                 className="navbar-li"
                 key={val.name}
-                id={window.location.pathname === val.link ? "active" : ""}
+                id={
+                  window.location.hash === `#${val.link}` ? "active" : ""
+                }
               >
                 <Link to={val.link}>{val.name}</Link>
               </li>

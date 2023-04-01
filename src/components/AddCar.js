@@ -18,9 +18,11 @@ const schema = yup
     name: yup.string().required(),
     brand: yup.string().required(),
     image: yup.string().required(),
-    duration: yup.number().positive().integer().required(),
-    totalAmountPayable: yup.number().positive().integer().required(),
-    optionToPurchaseFee: yup.number().positive().integer().required(),
+    engine_type: yup.string().required(),
+    transmission: yup.string().required(),
+    rent_per_day: yup.number().positive().integer().required(),
+    zero_to_sixty: yup.number().positive().required(),
+    top_speed: yup.number().positive().integer().required(),
   })
   .required();
 
@@ -56,43 +58,67 @@ const AddCar = () => {
         <div className="layer">
           <div className="form-container">
             <div className="form">
-              <h1>Add A New Car</h1>
               <form onSubmit={handleSubmit(onSubmit)} className="add-car-form">
                 <input required {...register("name")} placeholder="Name" />
 
                 <input required {...register("brand")} placeholder="Brand" />
 
-                <input
-                  required
-                  type="number"
-                  min="1"
-                  max="10000000"
-                  {...register("optionToPurchaseFee")}
-                  placeholder="Option to Purchase Fee"
-                />
+                <input required {...register("image")} placeholder="Image" />
 
                 <input
                   required
                   type="number"
                   min="1"
                   max="10000000"
-                  {...register("totalAmountPayable")}
-                  placeholder="Total Amount Payable at the end of the contract"
+                  {...register("top_speed")}
+                  placeholder="Top Speed (in miles)"
                 />
+
+                <input
+                  required
+                  type="number"
+                  min="0"
+                  max="10000000"
+                  step="0.1"
+                  {...register("zero_to_sixty")}
+                  placeholder="0 - 60 (in seconds)"
+                />
+
+                <div className="select-container">
+                  Engine Type:
+                  <select required {...register("engine_type")}>
+                    <option value="electric">Electric</option>
+                    <option value="hybrid">Hybrid</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="petrol">Petrol</option>
+                    <option value="gas">Gas</option>
+                  </select>
+                </div>
+
+                <input
+                  type="number"
+                  min="1"
+                  max="10000000"
+                  {...register("range")}
+                  placeholder="Range (if electric)"
+                />
+
+                <div className="select-container">
+                  Transmission:
+                  <select required {...register("transmission")}>
+                    <option value="automatic">Automatic</option>
+                    <option value="manual">Manual</option>
+                    <option value="semi">Semi</option>
+                  </select>
+                </div>
 
                 <input
                   required
                   type="number"
                   min="1"
                   max="10000000"
-                  {...register("duration")}
-                  placeholder="Duration"
-                />
-
-                <input
-                  required
-                  {...register("image")}
-                  placeholder="Image Url"
+                  {...register("rent_per_day")}
+                  placeholder="Rent per Day (in $)"
                 />
 
                 <button className="submit-btn" type="submit">

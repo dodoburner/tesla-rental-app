@@ -46,17 +46,8 @@ export const createCar = createAsyncThunk(
   'cars/createCar',
   async (car, { getState }) => {
     const { data } = getState().user;
-
     const headers = { Authorization: `${data.auth}` };
-    const carData = {
-      name: car.name,
-      image: car.image,
-      brand: car.brand,
-      duration: car.duration,
-      total_amount_payable: car.totalAmountPayable,
-      option_to_purchase_fee: car.optionToPurchaseFee,
-    };
-    const res = await axios.post(`${API_URL}/cars`, carData, { headers });
+    const res = await axios.post(`${API_URL}/cars`, car, { headers });
     return res.data;
   },
 );

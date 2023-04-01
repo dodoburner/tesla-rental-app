@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-one-expression-per-line */
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Fade from "react-reveal/Fade";
-import { ChromePicker } from "react-color";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { SpinnerRoundOutlined } from "spinners-react";
@@ -15,11 +14,6 @@ import {
 } from "../redux/carSlice";
 
 const DetailsPage = () => {
-  const [currentColor, setCurrentColor] = useState("#97bf10");
-  const handleOnChange = (color) => {
-    setCurrentColor(color.hex);
-  };
-
   const carData = useSelector(getDetailsView);
   const status = useSelector(getDetailsStatus);
   const dispatch = useDispatch();
@@ -47,25 +41,34 @@ const DetailsPage = () => {
                   <h2>{carData.name}</h2>
                   <p>{carData.brand}</p>
                 </div>
-                <div className="price">
-                  <span>
-                    <p>Total Amount</p>
-                    <h5>${carData.total_amount_payable}</h5>
-                  </span>
-                  <span>
-                    <p>Optional to Purchase</p>
-                    <h5>${carData.option_to_purchase_fee}</h5>
-                  </span>
-                  <span>
-                    <p>Duration</p>
-                    <h5>${carData.duration}</h5>
-                  </span>
-                </div>
-                <ChromePicker
-                  color={currentColor}
-                  onChangeComplete={handleOnChange}
-                  className="color"
-                />
+                <ul className="car-specs">
+                  <li>
+                    <p>Top Speed</p>
+                    <h5>{carData.top_speed} mph</h5>
+                  </li>
+                  <li>
+                    <p>0 - 60</p>
+                    <h5>{carData.zero_to_sixty} sec</h5>
+                  </li>
+                  <li>
+                    <p>Engine Type</p>
+                    <h5>{carData.engine_type}</h5>
+                  </li>
+                  {carData.engine_type === "electric" && (
+                    <li>
+                      <p>Range</p>
+                      <h5>{carData.range} miles</h5>
+                    </li>
+                  )}
+                  <li>
+                    <p>Transmission</p>
+                    <h5>{carData.transmission}</h5>
+                  </li>
+                  <li>
+                    <p>Rent/Day</p>
+                    <h5>{carData.rent_per_day}$</h5>
+                  </li>
+                </ul>
                 <Link to="/reserve" className="details-btn link">
                   Reserve
                 </Link>
