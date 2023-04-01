@@ -1,7 +1,7 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <h3><b>Microverse Final group capstone - Book an Appointment - Frontend</b></h3>
+  <h3><b>Tesla Car Rental App - Frontend</b></h3>
 
 </div>
 
@@ -29,7 +29,7 @@
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 final-capstone-project-front-end <a name="about-project"></a>
-The project is based on an app to book an appointment to try a Car. User see all cars in database and is able to book and try one. User can add and delete a car if user role is admin
+The project is based on an app to book an appointment to try a car. User can see all cars listed in the database and is able to create a reservation. The user can add and delete a car if the user role is admin.
 
 **[final-capstone-project-front-end]** is a...
 
@@ -72,8 +72,8 @@ The project is based on an app to book an appointment to try a Car. User see all
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://reserve-car.onrender.com/)
-- [API URL](https://microverse-final-capstone-backend.onrender.com)
+- [Live Demo Link](https://tesla-car-rental-app.netlify.app/#/)
+- [API URL](https://rails-zx7a.onrender.com)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
@@ -86,10 +86,8 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-```sh
- npm install node
-```
-
+- Node
+- A code editor such as VS Code
 
 ### Setup
 
@@ -115,15 +113,8 @@ Install this project with:
 To run the project, execute the following command:
 
 ```sh
-  npm run start
+  npm start
 ```
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
