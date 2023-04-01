@@ -96,7 +96,6 @@ Clone this repository to your desired folder:
 ```sh
   git clone https://github.com/EyasuTeshome/final-capstone-project-front-end
 ```
--
 
 ### Install
 
@@ -106,7 +105,6 @@ Install this project with:
   cd final-capstone-project-front-end
   npm install/npm install --legacy-peer-deps
 ```
--
 
 ### Usage
 
