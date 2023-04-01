@@ -72,8 +72,8 @@ The project is based on an app to book an appointment to try a Car. User see all
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://reserve-car.onrender.com/)
-- [API URL](https://microverse-final-capstone-backend.onrender.com)
+- [Live Demo Link](https://tesla-car-rental-app.netlify.app/#/)
+- [API URL](https://rails-wq0k.onrender.com)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
@@ -86,9 +86,8 @@ To get a local copy up and running, follow these steps.
 
 In order to run this project you need:
 
-```sh
- npm install node
-```
+- Node
+- A code editor such as VS Code
 
 
 ### Setup
@@ -96,7 +95,7 @@ In order to run this project you need:
 Clone this repository to your desired folder:
 
 ```sh
-  git clone https://github.com/EyasuTeshome/final-capstone-project-front-end
+  git clone https://github.com/dodoburner/tesla-rental-app.git
 ```
 -
 
@@ -105,7 +104,7 @@ Clone this repository to your desired folder:
 Install this project with:
 
 ```sh
-  cd final-capstone-project-front-end
+  cd tesla-rental-app
   npm install/npm install --legacy-peer-deps
 ```
 -
@@ -117,13 +116,6 @@ To run the project, execute the following command:
 ```sh
   npm run start
 ```
-<!--
-Example:
-
-```sh
-
-```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
