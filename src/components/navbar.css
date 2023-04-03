@@ -84,3 +84,28 @@ nav {
 .nav-footer {
   margin-left: 0;
 }
+
+.navbar-li {
+  padding: 1rem;
+  margin-top: 0.2rem;
+  cursor: pointer;
+}
+
+.navbar-li:hover,
+.navbar-ul #active,
+.menu-li:hover {
+  background-color: #97bf10;
+  color: white;
+  transition: 0.3s;
+}
+
+.navbar-li #active {
+  background-color: #97bf10;
+}
+
+.navbar-li a,
+.menu-li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
