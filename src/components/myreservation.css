@@ -41,11 +41,12 @@
   }
 
   .table-div {
-    width: 90%;
+    width: 100%;
     border-collapse: collapse;
     margin-top: 3.5rem;
     margin-left: 1rem;
     margin-right: 1rem;
+    padding: 0;
   }
 
   .table thead {
