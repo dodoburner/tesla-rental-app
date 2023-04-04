@@ -33,12 +33,14 @@ const Navbar = () => {
     },
   ]);
 
-  // remove add and delete car options if user is not admin
+  const canCloseNavbar = () => window.location.hash === "#/reserve"
+  || window.location.hash.includes("cars");
+
   useEffect(() => {
     if (user.data.role !== "admin") {
       setNavbarData((prevState) => prevState.slice(0, 3));
     }
-    if (window.location.hash === "#/reserve") {
+    if (canCloseNavbar()) {
       setIsOpen(false);
     }
   }, [window.location]);
@@ -77,7 +79,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={window.location.hash === "#/reserve" ? null : "hidden"}>
+      <div className={canCloseNavbar() ? null : "hidden"}>
         <button
           type="button"
           className={`navbar-toggle ${isOpen ? "" : "navbar-toggle-hidden"}`}

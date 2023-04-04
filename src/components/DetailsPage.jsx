@@ -31,8 +31,7 @@ const DetailsPage = () => {
       <div key={carData.id}>
         <div className="details-container">
           <div className="details-main">
-            <div className="img-back" />
-            <Fade>
+            <Fade cascade>
               <img src={carData.image} alt="car2" className="details-img" />
             </Fade>
             <Fade right cascade>
