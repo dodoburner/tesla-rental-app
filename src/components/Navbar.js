@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "../App.css";
 import NavFooter from "./NavFooter";
-import MobileMenu from "./Mobilemenu";
 import iconShow from "../images/icon-show-sidebar.svg";
 import iconHide from "../images/icon-hide-sidebar.svg";
+import MobileMenu from "./Mobilemenu";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -33,12 +33,17 @@ const Navbar = () => {
     },
   ]);
 
-  // remove add and delete car options if user is not admin
+  const canCloseNavbar = () => window.location.hash === "#/reserve"
+  || window.location.hash.includes("cars");
+
   useEffect(() => {
     if (user.data.role !== "admin") {
       setNavbarData((prevState) => prevState.slice(0, 3));
     }
-  }, []);
+    if (canCloseNavbar()) {
+      setIsOpen(false);
+    }
+  }, [window.location]);
 
   const toggleNavbar = () => {
     setIsOpen((prevState) => !prevState);
@@ -46,18 +51,11 @@ const Navbar = () => {
 
   return (
     <div className="main-nav">
-      <div
-        className={`mobile-menu ${
-          window.location.pathname === "/reserve" ? "show" : ""
-        }`}
-      >
+      <div className="mobile-menu">
         <MobileMenu />
       </div>
-      <div
-        className={`Navbar ${isOpen ? "" : "hidden"} ${
-          window.location.pathname === "/reserve" ? "hidden" : ""
-        }`}
-      >
+
+      <div className={`Navbar ${isOpen ? "" : "hidden"}`}>
         <img
           className="logo"
           src="https://marvel-b1-cdn.bc0a.com/f00000000270502/s19538.pcdn.co/wp-content/uploads/2017/08/TESLA-Logo.jpg"
@@ -69,9 +67,7 @@ const Navbar = () => {
               <li
                 className="navbar-li"
                 key={val.name}
-                id={
-                  window.location.hash === `#${val.link}` ? "active" : ""
-                }
+                id={window.location.hash === `#${val.link}` ? "active" : ""}
               >
                 <Link to={val.link}>{val.name}</Link>
               </li>
@@ -83,9 +79,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div
-        className={window.location.pathname.includes("cars") ? null : "hidden"}
-      >
+      <div className={canCloseNavbar() ? null : "hidden"}>
         <button
           type="button"
           className={`navbar-toggle ${isOpen ? "" : "navbar-toggle-hidden"}`}

@@ -5,10 +5,10 @@
 .details-container {
   display: flex;
   height: 100vh;
+  width: 100vw;
   flex-direction: row;
   justify-content: center;
   align-content: center;
-  width: 100vw;
   position: absolute;
   right: 0;
   background: rgb(255, 255, 255);
@@ -17,25 +17,25 @@
     rgba(255, 255, 255, 0) 60%,
     #8daf1c5b 100%
   );
-  padding-left: 15vw;
   overflow: hidden;
 }
 
 .details-main {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
-  padding: 0 2vw 2vw 1vw;
+  height: 100%;
+  padding: 0 2vw;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .details-main .details-img {
-  width: 75%;
-  margin: 1vw 0;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 5%;
+  bottom: 0;
+  left: -5%;
 }
 
 .details-main .car-info {
@@ -43,7 +43,7 @@
   display: flex;
   flex-direction: column;
   text-align: right;
-  margin: 15vh 0;
+  margin-left: auto;
 }
 
 .details-main .car-info .title {
@@ -134,11 +134,9 @@
 @media screen and (max-width: 767px) {
   .details-container {
     display: flex;
-    height: auto;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 100vw;
     position: absolute;
     right: 0;
     background: rgb(255, 255, 255);
@@ -152,31 +150,24 @@
 
   .details-main {
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
-    width: 100%;
   }
 
   .details-main .details-img {
-    width: 100%;
+    top: 10%;
+    width: 110%;
     height: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-    align-items: center;
-    margin-top: 10vw;
   }
 
   .details-main .car-info {
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: right;
     position: relative;
-    padding: 1vw 3vw;
     height: auto;
-    margin-top: -10px;
+    margin-top: auto;
   }
 
   .details-main .car-info .title {
@@ -209,6 +200,7 @@
     justify-content: space-between;
     padding: 4px 1vw;
     background-color: #96bf104b;
+    margin: 0;
   }
 
   .details-main .car-info .car-specs span {
@@ -228,7 +220,7 @@
   }
 
   .details-main .car-info .details-btn {
-    width: 60%;
+    width: 50%;
     height: 50px;
     background-color: #698315;
     color: #fff;
@@ -238,7 +230,7 @@
     border-radius: 50px;
     align-self: center;
     transition: 0.2s;
-    margin-top: 3vh;
+    margin: 2vh 0;
     position: relative;
   }
 

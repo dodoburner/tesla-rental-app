@@ -2,7 +2,6 @@
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 15%;
 }
 
 .hidden {
@@ -37,25 +36,6 @@
 
 li {
   list-style: none;
-}
-
-.navbar-li {
-  padding: 1rem;
-  margin-top: 0.2rem;
-  cursor: pointer;
-}
-
-.navbar-li:hover {
-  background-color: #97bf10;
-}
-
-.navbar-ul #active {
-  background-color: #97bf10;
-  color: white;
-}
-
-.navbar-li #active {
-  background-color: #97bf10;
 }
 
 .btn {
@@ -128,10 +108,6 @@ a {
 .mobile-menu {
   display: none;
   cursor: pointer;
-}
-
-.menu-li:hover {
-  background-color: #97bf10;
 }
 
 @media screen and (max-width: 767px) {

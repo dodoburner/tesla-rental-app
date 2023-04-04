@@ -51,6 +51,7 @@
   border: 1px solid white;
   color: gray;
   cursor: pointer;
+  margin: 0;
 }
 
 .reserve-date {
