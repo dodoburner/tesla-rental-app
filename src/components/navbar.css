@@ -6,24 +6,6 @@ nav {
   padding: 1em;
 }
 
-.burger-menu {
-  height: 100%;
-  width: 4em;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.hamburger-icon {
-  width: 3em;
-  height: 0.5em;
-  background-color: #97bf10;
-  border-radius: 0.5em;
-}
-
 .menu {
   position: fixed;
   top: 0;
@@ -44,6 +26,24 @@ nav {
 
 .visible {
   display: inherit;
+}
+
+.burger-menu {
+  height: 100%;
+  width: 4em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.hamburger-icon {
+  width: 3em;
+  height: 0.5em;
+  background-color: #97bf10;
+  border-radius: 0.5em;
 }
 
 .hamburger-icon.clicked:nth-child(1) {

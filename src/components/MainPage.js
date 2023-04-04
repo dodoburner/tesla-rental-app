@@ -47,12 +47,16 @@ const MainPage = () => {
     content = cars.map((car) => (
       // eslint-disable-next-line react/jsx-key
       <div key={car.id} className="card">
-        <button type="button" onClick={() => showDetailsPage(car.id)}>
-          <div className="car-background">
+        <div>
+          <button
+            className="car-background"
+            type="button"
+            onClick={() => showDetailsPage(car.id)}
+          >
             <div className="card-top">
               <img className="car-img" src={car.image} alt={car.name} />
             </div>
-          </div>
+          </button>
           <div className="card-bottom">
             <h1 className="carname">{car.name}</h1>
             <p className="dots">...................</p>
@@ -66,7 +70,7 @@ const MainPage = () => {
               <i className="fa-brands fa-instagram" />
             </div>
           </div>
-        </button>
+        </div>
       </div>
     ));
   }
